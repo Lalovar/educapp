@@ -1,0 +1,49 @@
+POST login
+curl -i -X POST -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/user -d '{"email":"maria@gmail.com","password":"123"}'                                                                                         
+
+PUT new user 
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/user/manuela@gmail.com -d '{"email":"mar@gmail.com","password":"123", "full_name": "Margarita la diosa"}'
+
+
+GET all
+curl -i -X GET -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/user
+
+
+groupUser_______________________________________________________________________________________________
+//put a new
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/groupUser/ -d '{"email":"maria@gmail.com","token":"abdc"}'
+//get ALL
+curl -i -X GET -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/groupUser/
+//get by... filter
+curl -i -X GET -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/groupUser/abcd
+//delete by body
+curl -i -X DELETE -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/groupUser/ -d '{"email":"maria@gmsail.com","token":"abdc"}'
+//UPDATE
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/groupUser/update/ -d '{"email":"antonio@gmail.com","token":"abcd", "role":"teacher"}'
+
+
+
+Activity_______________________________________________________________________________________________
+//NEW
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/activity/ -d '{"name":"tarea1","type":"abcd123", "groupToken":"abcd","status":"active","fromDate":"2018-12-04T12:00:00","toDate":"2018-12-05T12:00:00"}'
+//get by... filter
+curl -i -X GET -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/activity/abcd
+//delete by body
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/activity/update -d '{"name":"tarea1","type":"abcd123", "groupToken":"abcd","status":"closed","fromDate":"2018-12-04T12:00:00","toDate":"2018-12-05T12:00:00"}'
+//UPDATE
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/activity/update -d '{"name":"tarea1","type":"abcd123", "groupToken":"abcd","status":"active","fromDate":"2018-12-04T12:00:00","toDate":"2018-12-05T12:00:00"}'
+
+
+Score_______________________________________________________________________________________________
+//NEW
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/score -d '{"activityName":"tarea1","email":"maria@gmail.com", "score":"100"}'
+//getAll
+curl -i -X GET -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/score/all
+////single score by email and activityName
+curl -i -X GET -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/score/ -d '{"activityName":"tarea1","email":"maria@gmail.com"}'
+//Update by body
+curl -i -X PUT -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/score/update -d '{"activityName":"tarea1","email":"mar@gmail.com", "score":"100", "status":"active"}'
+//DELETE
+curl -i -X DELETE -H "Content-Type:application/json" http://www.educapp-lalovar.c9users.io/score -d '{"email":"mar@gmail.com","activityName":"tarea1"}'
+
+
